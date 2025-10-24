@@ -1,4 +1,5 @@
-import torchimport torch.nn as nn
+import torch
+import torch.nn as nn
 from huggingface_hub import PyTorchModelHubMixin
 import safetensors.torch
 import transformers
@@ -27,11 +28,11 @@ model = BasicLinear(config=config)
 # train your model here...
 
 # then save it with PyTorchModelHubMixin functions
-model.save_pretrained("test-model-2", config=config)
+model.save_pretrained("blahblah", config=config)
 
 # upload
-model.push_to_hub("test-model-2", config=config)
+model.push_to_hub("blahblah", config=config)
 
 # download
-model = BasicLinear.from_pretrained("lprimeau/test-model-2")
+model = BasicLinear.from_pretrained("lprimeau/blahblah")
 
