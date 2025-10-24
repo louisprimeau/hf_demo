@@ -1,0 +1,15 @@
+{
+  "architectures": [
+    "BasicLinear"
+  ],
+  "auto_map": {
+    "AutoConfig": "custom_config.LinearConfig",
+    "AutoModel": "custom_net.BasicLinear"
+  },
+  "bias": true,
+  "dtype": "float32",
+  "in_features": 10,
+  "model_type": "linear",
+  "out_features": 1,
+  "transformers_version": "4.57.1"
+}

@@ -1,0 +1,17 @@
+class BasicLinear(nn.Module, PyTorchModelHubMixin):
+    def __init__(self, config, bias=True):
+        super().__init__()
+
+
+        
+        self.weight = nn.Parameter(torch.randn(config['out_features'], config['in_features']) * 0.01)
+        if config['bias']:
+            self.bias = nn.Parameter(torch.zeros(config['out_features']))
+        else:
+            self.bias = None
+
+    def forward(self, x):
+        out = x @ self.weight.T
+        if self.bias is not None:
+            out = out + self.bias
+        return out
